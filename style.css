@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'Calculator';
+    src: URL('./Digital7-1e1Z.ttf') format('truetype');
+  }
+
+* {
+    font-size: 48px;
+    font-family: 'Calculator';
+}
+
+.calculator {
+    background-color: rgb(242, 242, 242);
+    border: 3px solid black;
+    border-radius: 10px;
+    width: 512px;
+    margin: auto;
+}
+
+.screen {
+    background-color: rgb(203, 203, 203);
+    border: 2px solid black;
+    border-radius: 10px;
+    direction: rtl;
+    margin: 16px;
+    padding: 16px;
+}
+
+.row {
+    display: flex;
+}
