@@ -60,10 +60,16 @@ function checkScreen(input) {
     else {
         return true;
     }
-
 }
 
 const screenValue = document.querySelector('.screen');
+
+document.addEventListener('keydown', function(event) {
+    const key = event.key;
+    if (key === "Backspace") {
+        screenValue.textContent = screenValue.textContent.slice(0, -1);
+    }
+  });
 
 //Adding Button funcationality for 0-9
 const numButtons = document.querySelectorAll('.btn');
