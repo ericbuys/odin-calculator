@@ -31,3 +31,19 @@ function operate(operator, a, b) {
         return "Invalid Operator";
     }
 }
+
+const screenValue = document.querySelector('.screen');
+//screenValue.textContent = "Hii"
+
+//Adding Button funcationalit for 0-9
+const numButtons = document.querySelectorAll('.btn');
+const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+numButtons.forEach((button) => {
+    nums.forEach((num) => {
+        if(button.classList.contains(num)) {
+            button.addEventListener('click', () => {
+                screenValue.textContent += num;
+            });
+        }
+    });
+});
