@@ -32,6 +32,37 @@ function operate(a, operator, b) {
     }
 }
 
+function checkScreen(input) {
+    const equation = input.split(' ');
+    console.log(equation.length);
+    console.log(equation);
+    if (equation.length == 1) {
+        if(equation[0] == '') {
+            console.log("too few numbers");
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    else if (equation.length == 3) {
+        if(equation[2] == '') {
+            console.log("incorrect spot");
+            return false;
+        }
+        else {
+            const result = operate(parseInt(equation[0]), equation[1], parseInt(equation[2]));
+            const screenValue = document.querySelector('.screen');
+            screenValue.textContent = result;
+            return true;
+        }
+    }
+    else {
+        return true;
+    }
+
+}
+
 const screenValue = document.querySelector('.screen');
 
 //Adding Button funcationality for 0-9
@@ -49,22 +80,61 @@ numButtons.forEach((button) => {
 
 const addBtn = document.querySelector('.add');
 addBtn.addEventListener('click', () => {
-    screenValue.textContent += ' + ';
+    if(checkScreen(screenValue.textContent)) {
+        screenValue.textContent += ' + ';
+    }
+    else {
+        addBtn.classList.add('error');
+
+        setTimeout(function(){
+            addBtn.classList.remove('error');
+        }, 500);
+    }
 });
 
 const subtractBtn = document.querySelector('.subtract');
 subtractBtn.addEventListener('click', () => {
-    screenValue.textContent += ' - ';
+    if(checkScreen(screenValue.textContent)) {
+        screenValue.textContent += ' - ';
+    }
+    else {
+        subtractBtn.classList.add('error');
+
+        setTimeout(function(){
+            subtractBtn.classList.remove('error');
+        }, 500);
+    }
+    
 });
 
 const multiplyBtn = document.querySelector('.multiply');
 multiplyBtn.addEventListener('click', () => {
-    screenValue.textContent += ' * ';
+    if(checkScreen(screenValue.textContent)) {
+        screenValue.textContent += ' * ';
+    }
+    else {
+        multiplyBtn.classList.add('error');
+
+        setTimeout(function(){
+            multiplyBtn.classList.remove('error');
+        }, 500);
+    }
+    
 });
 
 const divideBtn = document.querySelector('.divide');
 divideBtn.addEventListener('click', () => {
-    screenValue.textContent += ' / ';
+    if(checkScreen(screenValue.textContent)) {
+        screenValue.textContent += ' / ';
+    }
+    else {
+        divideBtn.classList.add('error');
+
+        setTimeout(function(){
+            divideBtn.classList.remove('error');
+        }, 500);
+    }
+    
 });
 
 const clrBtn = document.querySelector('.clr');

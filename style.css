@@ -3,6 +3,20 @@
     src: URL('./Digital7-1e1Z.ttf') format('truetype');
   }
 
+@keyframes shake {
+0% { transform: translate(1px, 1px) rotate(0deg); }
+10% { transform: translate(-1px, -2px) rotate(-1deg); }
+20% { transform: translate(-3px, 0px) rotate(1deg); }
+30% { transform: translate(3px, 2px) rotate(0deg); }
+40% { transform: translate(1px, -1px) rotate(1deg); }
+50% { transform: translate(-1px, 2px) rotate(-1deg); }
+60% { transform: translate(-3px, 1px) rotate(0deg); }
+70% { transform: translate(3px, 1px) rotate(-1deg); }
+80% { transform: translate(-1px, -1px) rotate(1deg); }
+90% { transform: translate(1px, 2px) rotate(0deg); }
+100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
 * {
     font-size: 48px;
     font-family: 'Calculator';
@@ -45,6 +59,13 @@
     color: rgb(203, 203, 203);
     transform: scale(1.08);
     border: 2px solid black;
+    
+}
+
+.btn.error {
+    background-color: rgb(255, 111, 111);
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
 }
 
 .row {
